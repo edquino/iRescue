@@ -8,7 +8,7 @@ countries.getList = async (req, res) => {
 
     try {
         
-        await db.query('SELECT country_id, name, active FROM chq_countries WHERE active = 1 ORDER BY active ASC', (err, results) =>{
+        await db.query('SELECT country_id, country_name, country_active FROM ir_countries WHERE country_active = 1 ORDER BY country_active ASC', (err, results) =>{
             if(err){
                 log('src/controllers/front', 'countries', 'stateList', err.stack, false, req, res);
             }else{
@@ -40,7 +40,7 @@ countries.create = async (req, res) => {
     console.log(name);
     try {
 
-        await db.query('INSERT INTO chq_countries (name) VALUES ($1)', [name], (err, results) => {
+        await db.query('INSERT INTO ir_countries (country_name) VALUES ($1)', [name], (err, results) => {
             if (err) {
                 log('src/controllers/front', 'countries', 'create', err.stack, false, req, res);
                 req.flash('delete', err.message);
@@ -64,7 +64,7 @@ countries.getById = async (req, res) => {
     try {
             
         await db.query(
-        `SELECT country_id, name, active FROM chq_countries WHERE country_id = $1`, 
+        `SELECT country_id, country_name, country_active FROM ir_countries WHERE country_id = $1`, 
         [country_id], (err, results) => {
             if (err) {
                 req.flash('error',err.message);
@@ -87,7 +87,7 @@ countries.update = async (req, res) => {
 
     try {
         
-        await db.query('UPDATE chq_countries SET name = $1, active = $2 WHERE country_id = $3', [name, active, country_id], (err, results) => {
+        await db.query('UPDATE ir_countries SET country_name = $1, country_active = $2 WHERE country_id = $3', [name, active, country_id], (err, results) => {
             if (err) {
                 log('src/controllers/front', 'countries', 'update', err.message, false, req, res);
                 return res.redirect(`/states/${municipality_id}/municipalities-list`);

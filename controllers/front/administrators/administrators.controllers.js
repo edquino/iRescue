@@ -7,7 +7,7 @@ const admin = {};
 admin.adminList = async(req, res) =>{
     try {
         
-        await db.query('SELECT * FROM chq_administrator WHERE admin_id != $1', [req.user.admin_id], (err, results) =>{
+        await db.query('SELECT * FROM ir_administrator WHERE admin_id != $1', [req.user.admin_id], (err, results) =>{
             if(err){
                 log('src/controllers/front', 'administrators', 'adminList', err.message, false, req, res);
             }else{
@@ -36,14 +36,14 @@ admin.createAdmin = async(req, res) =>{
         let passwordNew;
 
         if(password === "" || password == null){
-            passwordNew = '$2a$10$x5yKbfoRHQOMiMDc34Mw0eMlMHq3cmmAD4HyePXWVuI/yZZxy20re';
+            passwordNew = '$2a$10$6oWLTQ.0R/FYRp/EVFwaW.YEaPuC4/NZZGmzRpwrnjJTqQEIB0ZU2';
         }else{
             let salt = bcrypt.genSaltSync(10);
             passwordNew = bcrypt.hashSync(password, salt);
         }
         
         await db.query(
-            `INSERT INTO chq_administrator (username, name, lastname, email, password) 
+            `INSERT INTO ir_administrator (admin_username, admin_name, admin_lastname, admin_email, admin_password) 
             VALUES ($1, $2, $3, $4, $5)`, [username, name, lastname, email, passwordNew], (err, results) =>{
                 if(err){
                     log('src/controllers/front', 'administrators', 'create', err.message, false, req, res);
@@ -60,7 +60,7 @@ admin.createAdmin = async(req, res) =>{
 admin.updateAdminView = async(req, res) =>{
     const { admin_id } = req.params;
     try {
-        await db.query(`SELECT * FROM chq_administrator WHERE admin_id = $1`, [admin_id], (err, results) =>{
+        await db.query(`SELECT * FROM ir_administrator WHERE admin_id = $1`, [admin_id], (err, results) =>{
             if(err){
                 log('src/controllers/front', 'administrators', 'updateAdminView', err, false, req, res);
             }else{
@@ -89,8 +89,8 @@ admin.updateAdmin = async(req, res) =>{
         }
 
         await db.query(`
-        UPDATE chq_administrator 
-        SET username =$1, password =$2, name =$3, lastname =$4, email =$5, active =$6
+        UPDATE ir_administrator 
+        SET admin_username =$1, admin_password =$2, admin_name =$3, admin_lastname =$4, admin_email=$5, admin_active =$6
         WHERE admin_id = $7`,
         [username, passwordNew, name, lastname, email, active, admin_id], (err, results) =>{
             if(err){

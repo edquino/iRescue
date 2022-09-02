@@ -6,7 +6,7 @@ const documents = {};
 documents.documentsList = async(req, res) => {
     try {
         
-        await db.query('SELECT document_id, name, description, active FROM chq_personal_documents', (err, results) => {
+        await db.query('SELECT document_id, per_document_name, per_document_description, per_document_active FROM ir_personal_documents', (err, results) => {
             if(err){
                 log('src/controllers/front', 'personal_documents', 'documentsList', err.message, false, req, res);
             }else{
@@ -33,7 +33,7 @@ documents.documentsCreate = async(req, res) =>{
     const { name, description } = req.body;
     try {
 
-        await db.query('INSERT INTO chq_personal_documents (name, description) VALUES ($1, $2)', 
+        await db.query('INSERT INTO ir_personal_documents (per_document_name, per_document_description) VALUES ($1, $2)', 
         [name, description], 
         (err, results) =>{
             if(err){
@@ -54,7 +54,7 @@ documents.viewUpdateDocuments = async(req, res) =>{
     try {
 
         await db.query(`
-        SELECT * FROM chq_personal_documents
+        SELECT * FROM ir_personal_documents
         WHERE document_id = $1`, [document_id], (err, results) => {
             if(err){
                 log('src/controllers/front', 'personal_documents', 'viewUpdateAccess', err.message, false, req, res);
@@ -75,8 +75,8 @@ documents.updateDocuments = async(req, res) =>{
 
     try {
         await db.query(`
-        UPDATE chq_personal_documents 
-        SET name = $1, description = $2, active = $3 
+        UPDATE ir_personal_documents 
+        SET per_document_name = $1, per_document_description = $2, per_document_active = $3 
         WHERE document_id = $4`, [name, description, active, document_id], (err, results) =>{
             if(err){
                 log('src/controllers/front', 'access_Levels', 'UpdateAccess', error, false, req, res);

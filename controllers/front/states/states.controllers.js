@@ -5,7 +5,7 @@ let states = {};
 
 states.stateList = async(req, res) =>{
     try {
-        await db.query('SELECT state_id, name, active FROM chq_state ORDER BY active ASC', (err, results) =>{
+        await db.query('SELECT state_id, state_name, active FROM ir_state ORDER BY state_active ASC', (err, results) =>{
             if(err){
                 log('src/controllers/front', 'states', 'stateList', err.stack, false, req, res);
             }else{
@@ -31,7 +31,7 @@ states.stateCreate = async(req, res) =>{
     const { name } = req.body;
     try {
        
-        await db.query("INSERT INTO chq_state (name) VALUES ($1)", [name], (err, results) => {
+        await db.query("INSERT INTO ir_state (satate_name) VALUES ($1)", [name], (err, results) => {
             if(err){
                 log('src/controllers/front', 'stateCreate', 'stateViewUpdate', err.stack, false, req, res);
             }else{
@@ -49,7 +49,7 @@ states.stateCreate = async(req, res) =>{
 states.stateViewUpdate = async(req, res) =>{
     const { state_id } = req.params;
     try {
-        await db.query('SELECT * FROM chq_state WHERE state_id = $1', [state_id], (err, results) => {
+        await db.query('SELECT * FROM ir_state WHERE state_id = $1', [state_id], (err, results) => {
             if(err){
                 log('src/controllers/front', 'state', 'stateViewUpdate', err.stack, false, req, res);
             }else{
@@ -67,7 +67,7 @@ states.stateUpdate = async(req, res) =>{
     const { state_id } = req.params;
     const { name, active } = req.body;
     try {
-        await db.query('UPDATE chq_state SET name = $1, active = $2 WHERE state_id = $3', [name, active, state_id], (err, results) => {
+        await db.query('UPDATE ir_state SET state_name = $1, state_active = $2 WHERE state_id = $3', [name, active, state_id], (err, results) => {
             if(err){
                 log('src/controllers/front', 'state', 'stateUpdate', err.stack, false, req, res);
             }else{

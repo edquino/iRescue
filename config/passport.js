@@ -16,7 +16,7 @@ module.exports = function (passport) {
 
     //Login Administrator
     passport.use(
-        'login-admin-chq',
+        'login-admin-irescue',
         new LocalStrategy({
             usernameField: 'username',
             passwordField: 'password',
@@ -24,7 +24,7 @@ module.exports = function (passport) {
         },
             async (req, user, password, done) => {
                 db.query(
-                    `SELECT * FROM chq_administrator WHERE username = $1 AND active = 1`, [user], async (err, results) => {
+                    `SELECT * FROM ir_administrator WHERE admin_username = $1 AND admin_active = 1`, [user], async (err, results) => {
                     if (err) {
                         console.log(err.stack);
                         return done(null, false, req.flash('error', err.stack));
@@ -33,8 +33,7 @@ module.exports = function (passport) {
                         if (!results.rows.length) {
                             return done(null, false, req.flash('warning', 'Usuario o contraseña incorrectos'));
                         } else {
-
-                            if (!bcrypt.compareSync(password, results.rows[0].password)) {
+                            if (!bcrypt.compareSync(password, results.rows[0].admin_password)) {
                                 return done(null, false, req.flash('warning', 'Usuario o contraseña incorrectos'));
                             } else {    
 
@@ -49,7 +48,7 @@ module.exports = function (passport) {
 
     //Login Administrator - Branche
     passport.use(
-        'login-admin-branche',
+        'login-user-irescue',
         new LocalStrategy({
             usernameField: 'username',
             passwordField: 'password',
@@ -57,17 +56,19 @@ module.exports = function (passport) {
         },
             async (req, user, password, done) => {
                 db.query(
-                    `SELECT * FROM chq_manager WHERE username = $1 AND active = 1`, [user], async (err, results) => {
+                    `SELECT * FROM ir_users WHERE username = $1 AND user_active = 1`, [user], async (err, results) => {
                     if (err) {
                         console.log(err.stack);
                         return done(null, false, req.flash('error', err.stack));
                     } else {
                         
                         if (!results.rows.length) {
+                            console.log("****************Primer IF****************");
                             return done(null, false, req.flash('warning', 'Usuario o contraseña incorrectos'));
                         } else {
 
-                            if (!bcrypt.compareSync(password, results.rows[0].password)) {
+                            if (!bcrypt.compareSync(password, results.rows[0].user_password)) {
+                                console.log("****************Segundo IF****************");
                                 return done(null, false, req.flash('warning', 'Usuario o contraseña incorrectos'));
                             } else {    
 

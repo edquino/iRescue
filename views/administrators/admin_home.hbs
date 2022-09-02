@@ -63,11 +63,11 @@
                             {{#each administrators }}
                             <tr>
                                 <td>{{admin_id}}</td>
-                                <td>{{username}}</td>
-                                <td>{{name}}</td>
-                                <td>{{lastname}}</td>
-                                <td>{{email}}</td>
-                                <td>{{#stateDetails active}}{{/stateDetails}}
+                                <td>{{admin_username}}</td>
+                                <td>{{admin_name}}</td>
+                                <td>{{admin_lastname}}</td>
+                                <td>{{admin_email}}</td>
+                                <td>{{#stateDetails admin_active}}{{/stateDetails}}
                                 </td>
                                 <td>
                                     <a  href="/administrators/{{admin_id}}/update-view" class="btn btn-inverse-dark">

@@ -9,9 +9,9 @@ municipality.getList = async (req, res) => {
 
     try {
         
-        await db.query('SELECT state_id, name, active FROM chq_state ORDER BY active ASC', (err, results) =>{
+        await db.query('SELECT state_id, state_name, state_active FROM ir_state ORDER BY state_active ASC', (err, results) =>{
             if(err){
-                log('src/controllers/front', 'states', 'stateList', err.stack, false, req, res);
+                log('src/controllers/front', 'municipality', 'getList', err.stack, false, req, res);
             }else{
                 let states = results.rows;
                 return res.render('municipalities/mun_home', { states });
@@ -29,12 +29,12 @@ municipality.muncipalititesByState = async (req, res) => {
     try {
 
          //get selected department
-         let selectedState = await db.query('SELECT state_id, name FROM chq_state WHERE state_id = $1', [state_id]);
+         let selectedState = await db.query('SELECT state_id, state_name FROM ir_state WHERE state_id = $1', [state_id]);
          selectedState = selectedState.rows[0];
         
-        await db.query(`SELECT m.municipality_id, m.name, s.name as namestate, m.active
-        FROM chq_municipalities as m 
-        INNER JOIN chq_state as s ON m.state_id = s.state_id
+        await db.query(`SELECT m.municipality_id, m.municipality_name, s.state_name as namestate, m.municipality_active
+        FROM ir_municipalities as m 
+        INNER JOIN ir_state as s ON m.state_id = s.state_id
         WHERE s.state_id = $1`, [state_id], (err, results) => {
             if (err) {
                 log('src/controllers/front', 'municipality', 'muncipalititesByState', error, false, req, res);
@@ -55,10 +55,10 @@ municipality.viewcreate = async(req, res)=>{
     try {
         
         //get selected department
-        let selectedState = await db.query('SELECT state_id, name FROM chq_state WHERE state_id = $1', [state_id]);
+        let selectedState = await db.query('SELECT state_id, state_name FROM ir_state WHERE state_id = $1', [state_id]);
         selectedState = selectedState.rows[0];
 
-        await db.query('SELECT state_id, name FROM chq_state WHERE active = 1', (err, results) =>{
+        await db.query('SELECT state_id, state_name FROM ir_state WHERE active = 1', (err, results) =>{
             if(err){
                 log('src/controllers/front', 'municipality', 'viewcreate', error, false, req, res);
             }else{
@@ -78,7 +78,7 @@ municipality.create = async (req, res) => {
 
     try {
 
-        await db.query('INSERT INTO chq_municipalities (name, state_id) VALUES ($1,$2)', [name, state_id], (err, results) => {
+        await db.query('INSERT INTO ir_municipalities (municipality_name, state_id) VALUES ($1,$2)', [name, state_id], (err, results) => {
             if (err) {
                 log('src/controllers/front', 'municipality', 'create', err.stack, false, req, res);
                 req.flash('delete', err.message);
@@ -101,14 +101,14 @@ municipality.getById = async (req, res) => {
 
     try {
             
-        let states = await db.query('SELECT state_id, name FROM chq_state');
+        let states = await db.query('SELECT state_id, state_name FROM ir_state');
         states = states.rows;
 
         await db.query(
-        `SELECT m.municipality_id, m.name, m.active,
-        s.state_id, s.name AS state_name
-        FROM chq_municipalities AS m 
-        INNER JOIN chq_state AS s ON s.state_id = m.state_id
+        `SELECT m.municipality_id, m.municipality_name, m.municipality_active,
+        s.state_id, s.state_name
+        FROM ir_municipalities AS m 
+        INNER JOIN ir_state AS s ON s.state_id = m.state_id
         WHERE m.municipality_id = $1`, 
         [municipality_id], (err, results) => {
             if (err) {
@@ -132,7 +132,7 @@ municipality.update = async (req, res) => {
 
     try {
         
-        await db.query('UPDATE chq_municipalities SET name = $1, state_id = $2, active = $3 WHERE municipality_id = $4', [name, state_id, active ,municipality_id], (err, results) => {
+        await db.query('UPDATE ir_municipalities SET municipality_name = $1, state_id = $2, municipality_active = $3 WHERE municipality_id = $4', [name, state_id, active ,municipality_id], (err, results) => {
             if (err) {
                 log('src/controllers/front', 'municipality', 'update', err.message, false, req, res);
                 return res.redirect(`/states/${municipality_id}/municipalities-list`);
@@ -151,7 +151,7 @@ municipality.deletesmunicipality = async (req, res) => {
     
     const { id } = req.params;
     
-    await db.query('DELETE FROM municipalities WHERE municipality_id = $1', [id], (err, results) => {
+    await db.query('DELETE FROM ir_municipalities WHERE municipality_id = $1', [id], (err, results) => {
         if (err) {
             console.log(err.stack);
             return req.flash('error',err.message);

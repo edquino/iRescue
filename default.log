@@ -2552,3 +2552,107 @@ funcion: sendValidationEmail
 error: ReferenceError: moment is not defined
 --------------------------------------------------------------------------------------------
 
+2022.09.02, 19:40:12.0577 UTC -> 
+archivo: administrators.controller
+ruta: src/controllers/front
+funcion: adminList
+error: no existe la relación «chq_administrator»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 19:40:20.0190 UTC -> 
+archivo: administrators.controller
+ruta: src/controllers/front
+funcion: adminList
+error: no existe la relación «chq_administrator»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 19:40:21.0491 UTC -> 
+archivo: administrators.controller
+ruta: src/controllers/front
+funcion: adminList
+error: no existe la relación «chq_administrator»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 19:50:01.0662 UTC -> 
+archivo: personal_documents.controller
+ruta: src/controllers/front
+funcion: documentsList
+error: no existe la relación «chq_personal_documents»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:08:17.0167 UTC -> 
+archivo: states.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la columna «municipality_name»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:12:17.0207 UTC -> 
+archivo: states.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la columna «municipality_name»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:22:18.0736 UTC -> 
+archivo: municipality.controller
+ruta: src/controllers/front
+funcion: getById
+error: error: no existe la columna «name»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:22:32.0628 UTC -> 
+archivo: municipality.controller
+ruta: src/controllers/front
+funcion: getById
+error: error: no existe la columna «name»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:22:33.0694 UTC -> 
+archivo: municipality.controller
+ruta: src/controllers/front
+funcion: getById
+error: error: no existe la columna «name»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:23:15.0155 UTC -> 
+archivo: municipality.controller
+ruta: src/controllers/front
+funcion: getById
+error: error: no existe la columna «name»
+--------------------------------------------------------------------------------------------
+
+2022.09.02, 20:24:19.0995 UTC -> 
+archivo: gender.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la relación «chq_gender»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+

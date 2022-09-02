@@ -27,15 +27,15 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="cname">Nombre</label>
-                            <input id="cname" class="form-control" name="name" value="{{personal_document.name}}" minlength="2" type="text" placeholder="Escribir titulo del acceso..." required>
+                            <input id="cname" class="form-control" name="name" value="{{personal_document.per_document_name}}" minlength="2" type="text" placeholder="Escribir titulo del acceso..." required>
                         </div>
                         <div class="form-group">
                             <label for="ccomment">Descripci&oacute;n</label>
-                            <textarea id="ccomment" class="form-control" name="description" required>{{personal_document.description}}</textarea>
+                            <textarea id="ccomment" class="form-control" name="description" required>{{personal_document.per_document_description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            {{#showFormElements personal_document.active}}
+                            {{#showFormElements personal_document.per_document_active}}
                             <select class="js-example-basic-single w-100" name="active">
                                 <option value="1">Activo</option>
                                 <option value="0">Inactivo</option>

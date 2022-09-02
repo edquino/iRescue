@@ -27,11 +27,11 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="cname">Nombre Genero</label>
-                            <input id="cname" class="form-control" name="name" value="{{gender.name}}" minlength="2" type="text" placeholder="Escribir nombre genero..." required>
+                            <input id="cname" class="form-control" name="name" value="{{gender.gender_name}}" minlength="2" type="text" placeholder="Escribir nombre genero..." required>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            {{#showFormElements gender.active}}
+                            {{#showFormElements gender.gender_active}}
                             <select class="js-example-basic-single w-100" name="active">
                                 <option value="1">Activo</option>
                                 <option value="0">Inactivo</option>

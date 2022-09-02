@@ -8,14 +8,14 @@ module.exports = function (app, passport) {
     });
 
     //Authenticate
-    app.post('/Authenticate-admin-branche', isNotLoggedIn, passport.authenticate('login-admin-branche', {
+    app.post('/Authenticate-admin-branche', isNotLoggedIn, passport.authenticate('login-user-irescue', {
         successRedirect: '/',
         failureRedirect: '/Authenticate-admin-branche',
         failureFlash: true
     }));
 
     //session close 
-    app.get('/logout', function (req, res) {
+    app.get('/logout', isLoggedIn, async (req, res) => {
         req.logout();
         res.redirect('/Authenticate-admin-branche');
     });

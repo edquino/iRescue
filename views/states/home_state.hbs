@@ -44,10 +44,10 @@
                             {{#each states}}
                             <tr>
                                 <td>
-                                    {{name}}
+                                    {{state_name}}
                                 </td>
                                 <td>
-                                    {{#stateDetails active}}{{/stateDetails}}
+                                    {{#stateDetails state_active}}{{/stateDetails}}
                                 </td>
                                 <td>
                                     <a href="/state/{{state_id}}/update" class="btn btn-inverse-dark mr-3">

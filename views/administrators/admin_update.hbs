@@ -27,15 +27,15 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="cname">Nombre de Usuario</label>
-                            <input id="cname" class="form-control" name="username" value="{{administrator.username}}" minlength="2" type="text" placeholder="Escribir nombre del usuario..." required>
+                            <input id="cname" class="form-control" name="username" value="{{administrator.admin_username}}" minlength="2" type="text" placeholder="Escribir nombre del usuario..." required>
                         </div>
                         <div class="form-group">
                             <label for="cname">Nombre</label>
-                            <input id="cname" class="form-control" name="name" value="{{administrator.name}}" minlength="2" type="text" placeholder="Escribir nombre..." required>
+                            <input id="cname" class="form-control" name="name" value="{{administrator.admin_name}}" minlength="2" type="text" placeholder="Escribir nombre..." required>
                         </div>
                         <div class="form-group">
                             <label for="cname">Apellido</label>
-                            <input id="cname" class="form-control" name="lastname" value="{{administrator.lastname}}" minlength="2" type="text" placeholder="Escribir apellido..." required>
+                            <input id="cname" class="form-control" name="lastname" value="{{administrator.admin_lastname}}" minlength="2" type="text" placeholder="Escribir apellido..." required>
                         </div>
                         <div class="form-group">
                             <label class="form-check-label">¿Usar contraseña predeterminada?</label>
@@ -62,11 +62,11 @@
                         </div>
                         <div class="form-group">
                             <label for="cemail">Correo</label>
-                            <input id="cemail" class="form-control" type="email" name="email" value="{{administrator.email}}"  placeholder="Escribir correo..." required>
+                            <input id="cemail" class="form-control" type="email" name="email" value="{{administrator.admin_email}}"  placeholder="Escribir correo..." required>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            {{#showFormElements administrator.active}}
+                            {{#showFormElements administrator.admin_active}}
                             <select class="js-example-basic-single w-100" name="active">
                                 <option value="1">Activo</option>
                                 <option value="0">Inactivo</option>

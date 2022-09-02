@@ -47,13 +47,13 @@
                             {{#each states}}
                             <tr>
                                 <td>
-                                    {{name}}
+                                    {{state_name}}
                                 </td>
                                  <td>
                                     1
                                 </td>   
                                 <td>
-                                    {{#stateDetails active}}{{/stateDetails}}
+                                    {{#stateDetails state_active}}{{/stateDetails}}
                                 </td>
                                 <td>
                                     <a href="/states/{{state_id}}/municipalities-list" class="btn btn-inverse-dark mr-3">

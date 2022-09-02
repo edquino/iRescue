@@ -18,9 +18,6 @@ module.exports = (app, passport) => {
     //Municipalities
     app.use(require('./municipalities/municipality.routes'));
 
-    //Access Leves 
-    app.use(require('./access_levels/access_levels.routes'));
-
     //Administrators
     app.use(require('./administrators/administrators.routes'));
 
@@ -29,8 +26,5 @@ module.exports = (app, passport) => {
 
     //Genders
     app.use(require('./gender/gender.routes'));
-
-    //Business Type
-    app.use(require('./business_type/business_type.routes'));
 
 };

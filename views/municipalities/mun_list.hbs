@@ -47,8 +47,8 @@
                             {{#each municipalities }}
                             <tr>
                                 <td>{{municipality_id}}</td>
-                                <td>{{name}}</td>
-                                <td>{{#stateDetails active}}{{/stateDetails}}
+                                <td>{{municipality_name}}</td>
+                                <td>{{#stateDetails municipality_active}}{{/stateDetails}}
                                 </td>
                                 <td>
                                     <a  href="/municipalities/{{municipality_id}}/update-view" class="btn btn-inverse-dark">

@@ -47,8 +47,8 @@
                             {{#each countries }}
                             <tr>
                                 <td>{{country_id}}</td>
-                                <td>{{name}}</td>
-                                <td>{{#stateDetails active}}{{/stateDetails}}
+                                <td>{{country_name}}</td>
+                                <td>{{#stateDetails country_active}}{{/stateDetails}}
                                 </td>
                                 <td>
                                     <a  href="/countries/{{country_id}}/update-view" class="btn btn-inverse-dark">

@@ -1,4 +1,4 @@
-const db = require('@config/db');
+
 const { isNotLoggedIn, isLoggedIn } = require('@middlewares/auth');
 
 
@@ -10,7 +10,7 @@ module.exports = function (app, passport) {
     });
 
     //Authenticate - - Administrator - Branche
-    app.post('/Authenticate-admin-branche', isNotLoggedIn, passport.authenticate('login-admin-branche', {
+    app.post('/Authenticate-admin-branche', isNotLoggedIn, passport.authenticate('login-user-irescue', {
         successRedirect: '/',
         failureRedirect: '/Authenticate-admin-branche',
         failureFlash: true
@@ -22,7 +22,7 @@ module.exports = function (app, passport) {
     });
 
     //Authenticate - Administrator - Chequealo
-    app.post('/Authenticate', isNotLoggedIn, passport.authenticate('login-admin-chq', {
+    app.post('/Authenticate', isNotLoggedIn, passport.authenticate('login-admin-irescue', {
         successRedirect: '/',
         failureRedirect: '/Authenticate',
         failureFlash: true
