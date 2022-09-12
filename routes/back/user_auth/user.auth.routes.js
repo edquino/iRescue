@@ -8,8 +8,6 @@ router.post('/api/login', login);
 router.post('/api/signup', signup);
 router.post('/api/refreshToken', refreshToken);
 
-
-
 //Codigo de Verificacion
 router.post('/api/send-otp', sendVerificationOtp);
 router.post('/api/verify-otp', verifyOtpCode);

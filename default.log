@@ -2656,3 +2656,19 @@ error: error: no existe la relación «chq_gender»
     at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
 --------------------------------------------------------------------------------------------
 
+2022.09.03, 16:27:36.0819 UTC -> 
+archivo: states.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la columna «active»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+

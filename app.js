@@ -71,6 +71,6 @@ app.all('*', (req, res) =>{
 
 
 app.listen(port, () => {
-    console.log('chequealo app is running on port ' + port);
+    console.log('iRescue app is running on port ' + port);
 
 });

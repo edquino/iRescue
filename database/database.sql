@@ -136,6 +136,21 @@ INSERT INTO ir_personal_documents (document_id, per_document_name, per_document_
 INSERT INTO ir_personal_documents (document_id, per_document_name, per_document_description) VALUES (1,'DUI', '.');
 INSERT INTO ir_personal_documents (document_id, per_document_name, per_document_description) VALUES (2,'NIT', '.');
 
+CREATE TABLE ir_disabilities(
+    disability_id SERIAL PRIMARY KEY NOT NULL, 
+    dis_name VARCHAR,
+    dis_description VARCHAR,
+    dis_active INT NOT NULL DEFAULT 1,
+    dis_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    dis_mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO ir_disabilities (disability_id, dis_name) VALUES (0,'Pendiente');
+INSERT INTO ir_disabilities (dis_name) VALUES ('Discapacidad física');
+INSERT INTO ir_disabilities (dis_name) VALUES ('Discapacidad sensorial');
+INSERT INTO ir_disabilities (dis_name) VALUES ('Discapacidad intelectual');
+
+
 CREATE TABLE ir_users(
     user_id SERIAL PRIMARY KEY NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -144,14 +159,15 @@ CREATE TABLE ir_users(
     user_name VARCHAR(250) NOT NULL,
     user_lastname VARCHAR(250) NOT NULL,
     document_id INTEGER NOT NULL DEFAULT 0,
+    disability_id INTEGER NOT NULL DEFAULT 0,
     user_document_detail VARCHAR,
     user_email VARCHAR(250) UNIQUE NOT NULL,
     user_cellphone VARCHAR(15) UNIQUE NOT NULL,
     user_country_id INTEGER NOT NULL DEFAULT 0,
-    user_state_id INTEGER NOT NULL DEFAULT 0,
-    user_municipality_id INTEGER NOT NULL DEFAULT 0,
+    state_id INTEGER NOT NULL DEFAULT 0,
+    municipality_id INTEGER NOT NULL DEFAULT 0,
     user_photo_profile VARCHAR(250),
-    user_gender_id INTEGER NOT NULL DEFAULT 0,
+    gender_id INTEGER NOT NULL DEFAULT 0,
     user_active INT NOT NULL DEFAULT 1,
     user_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     user_mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -179,21 +195,25 @@ CREATE TABLE ir_users(
     CONSTRAINT ir_personal_documents_id_fkey FOREIGN KEY (document_id)
     REFERENCES ir_personal_documents (document_id)
     ON UPDATE NO ACTION
+    ON DELETE NO ACTION,
+
+    CONSTRAINT ir_disability_id_fkey FOREIGN KEY (disability_id)
+    REFERENCES ir_disabilities (disability_id)
+    ON UPDATE NO ACTION
     ON DELETE NO ACTION
 );
 
 
-CREATE TABLE chq_notification (
+CREATE TABLE ir_notification (
     notification_id SERIAL PRIMARY KEY NOT NULL,
-    audience_id INTEGER NOT NULL, 
-    title VARCHAR(150) NOT NULL,
-    subtitle VARCHAR(250),
-    description TEXT,
-    picture VARCHAR,
-    active INT NOT NULL DEFAULT 1,
-    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    not_title VARCHAR(150) NOT NULL,
+    not_subtitle VARCHAR(250),
+    not_description TEXT,
+    not_active INT NOT NULL DEFAULT 1,
+    not_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    not_mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 
 
