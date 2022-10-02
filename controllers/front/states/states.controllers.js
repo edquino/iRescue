@@ -5,7 +5,7 @@ let states = {};
 
 states.stateList = async(req, res) =>{
     try {
-        await db.query('SELECT state_id, state_name, active FROM ir_state ORDER BY state_active ASC', (err, results) =>{
+        await db.query('SELECT state_id, state_name, state_active FROM ir_state ORDER BY state_active ASC', (err, results) =>{
             if(err){
                 log('src/controllers/front', 'states', 'stateList', err.stack, false, req, res);
             }else{
@@ -31,9 +31,9 @@ states.stateCreate = async(req, res) =>{
     const { name } = req.body;
     try {
        
-        await db.query("INSERT INTO ir_state (satate_name) VALUES ($1)", [name], (err, results) => {
+        await db.query("INSERT INTO ir_state (state_name) VALUES ($1)", [name], (err, results) => {
             if(err){
-                log('src/controllers/front', 'stateCreate', 'stateViewUpdate', err.stack, false, req, res);
+                log('src/controllers/front', 'stateCreate', 'stateCreate', err.stack, false, req, res);
             }else{
                 req.flash('success', 'Registro creado correctamente');
                 return res.redirect('/state/list');

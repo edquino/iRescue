@@ -27,14 +27,14 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="cname">Nombre Municipio</label>
-                            <input id="cname" class="form-control" name="name" value="{{municipality.name}}" minlength="2" type="text" placeholder="Escribir nombre del departamento..." required>
+                            <input id="cname" class="form-control" name="name" minlength="2" type="text" placeholder="Escribir nombre del municipio..." required>
                         </div>
                         <div class="form-group">
                             <label>Departamento</label>
                             <select class="js-example-basic-single w-100" name="state_id">
-                                <option value="{{selectedState.state_id}}">{{selectedState.name}}</option>
+                                <option value="{{selectedState.state_id}}">{{selectedState.state_name}}</option>
                                 {{#each states}}
-                                    <option value="{{state_id}}">{{name}}</option>
+                                    <option value="{{state_id}}">{{state_name}}</option>
                                 {{/each}}
                             </select>
                         </div>

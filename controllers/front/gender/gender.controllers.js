@@ -8,7 +8,7 @@ gender.getList = async (req, res) => {
 
     try {
         
-        await db.query('SELECT gender_id, gender_name, gender_active FROM ir_gender ORDER BY gender_active ASC', (err, results) =>{
+        await db.query('SELECT gender_id, gender_name, gender_active FROM ir_gender ORDER BY gender_id, gender_active ASC', (err, results) =>{
             if(err){
                 log('src/controllers/front', 'gender', 'stateList', err.stack, false, req, res);
             }else{

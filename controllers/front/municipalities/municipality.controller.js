@@ -37,7 +37,7 @@ municipality.muncipalititesByState = async (req, res) => {
         INNER JOIN ir_state as s ON m.state_id = s.state_id
         WHERE s.state_id = $1`, [state_id], (err, results) => {
             if (err) {
-                log('src/controllers/front', 'municipality', 'muncipalititesByState', error, false, req, res);
+                log('src/controllers/front', 'municipality', 'muncipalititesByState', err, false, req, res);
                 req.flash('delete', err.message);
             } else {
                 
@@ -58,9 +58,9 @@ municipality.viewcreate = async(req, res)=>{
         let selectedState = await db.query('SELECT state_id, state_name FROM ir_state WHERE state_id = $1', [state_id]);
         selectedState = selectedState.rows[0];
 
-        await db.query('SELECT state_id, state_name FROM ir_state WHERE active = 1', (err, results) =>{
+        await db.query('SELECT state_id, state_name FROM ir_state WHERE state_active = 1', (err, results) =>{
             if(err){
-                log('src/controllers/front', 'municipality', 'viewcreate', error, false, req, res);
+                log('src/controllers/front', 'municipality', 'viewcreate', err, false, req, res);
             }else{
                 let states = results.rows;
                 res.render('municipalities/mun_create', { selectedState, states });

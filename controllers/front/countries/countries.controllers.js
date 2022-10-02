@@ -8,7 +8,7 @@ countries.getList = async (req, res) => {
 
     try {
         
-        await db.query('SELECT country_id, country_name, country_active FROM ir_countries WHERE country_active = 1 ORDER BY country_active ASC', (err, results) =>{
+        await db.query('SELECT country_id, country_name, country_active FROM ir_countries ORDER BY country_active ASC', (err, results) =>{
             if(err){
                 log('src/controllers/front', 'countries', 'stateList', err.stack, false, req, res);
             }else{
@@ -37,14 +37,14 @@ countries.viewcreate = async(req, res)=>{
 
 countries.create = async (req, res) => {
     const { name } = req.body;
-    console.log(name);
+
     try {
 
         await db.query('INSERT INTO ir_countries (country_name) VALUES ($1)', [name], (err, results) => {
             if (err) {
                 log('src/controllers/front', 'countries', 'create', err.stack, false, req, res);
                 req.flash('delete', err.message);
-                return res.redirect('/municipalities/list');
+                return res.redirect('/countries/list');
             } else {
                 req.flash('success', 'Registro guardado correctamente');
                 return res.redirect(`/countries/list`);

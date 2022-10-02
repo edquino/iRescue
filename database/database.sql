@@ -14,21 +14,6 @@ CREATE TABLE ir_administrator(
 INSERT INTO ir_administrator (admin_username, admin_password, admin_name, admin_lastname, admin_email) VALUES('admin', '$2a$10$VjNAbm5bGBIZW1L1uk2hXuN07/wPON5o4dmP8D7CMvIupjbMt9QxG', 'Usuario01', 'iRescue',  'administrator@irescue.com');
 INSERT INTO ir_administrator (admin_username, admin_password, admin_name, admin_lastname, admin_email) VALUES('user', '$2a$10$VjNAbm5bGBIZW1L1uk2hXuN07/wPON5o4dmP8D7CMvIupjbMt9QxG', 'Usuario02', 'iRescue',  'user01@irescue.com');
 
---CREATE TABLE RECOVER CODES 
-CREATE TABLE ir_recover_codes (
-    code_id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
-    email VARCHAR NOT NULL,
-    code VARCHAR NOT NULL,
-    expiration_date VARCHAR,
-    active INT NOT NULL DEFAULT 1,
-    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT ir_users_id_fkey FOREIGN KEY (user_id)
-    REFERENCES ir_users (user_id)
-);
-
-
 --CREATE TABLE GENDER
 CREATE TABLE ir_gender (
     gender_id SERIAL PRIMARY KEY,
@@ -43,7 +28,7 @@ INSERT INTO ir_gender(gender_name) VALUES( 'Masculino');
 INSERT INTO ir_gender(gender_name) VALUES( 'Femenino');
 
 CREATE TABLE ir_countries(
-    country_id SERIAL PRIMARY KEY NOT NULL,
+    country_id SERIAL PRIMARY KEY,
     country_name VARCHAR(50) NOT NULL,
     country_active INT NOT NULL DEFAULT 1,
     country_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -55,7 +40,7 @@ INSERT INTO ir_countries (country_id, country_name) VALUES (1,'El SALVADOR');
 
 
 CREATE TABLE ir_state(
-    state_id SERIAL PRIMARY KEY NOT NULL,
+    state_id SERIAL PRIMARY KEY,
     state_name VARCHAR(50) NOT NULL,
     country_id INTEGER NOT NULL DEFAULT 1,
     state_active INT NOT NULL DEFAULT 1,
@@ -86,7 +71,7 @@ INSERT INTO ir_state (state_id, state_name) VALUES (14, 'Usulután');
 
 
 CREATE TABLE ir_municipalities(
-    municipality_id SERIAL PRIMARY KEY NOT NULL,
+    municipality_id SERIAL PRIMARY KEY,
     state_id INTEGER NOT NULL,
     municipality_name VARCHAR(50) NOT NULL,
     municipality_active INT NOT NULL DEFAULT 1,
@@ -124,7 +109,7 @@ INSERT INTO ir_municipalities (state_id, municipality_name) VALUES (2 , 'Tejutep
 INSERT INTO ir_municipalities (state_id, municipality_name) VALUES (2 , 'Victoria');
 
 CREATE TABLE ir_personal_documents(
-    document_id SERIAL PRIMARY KEY NOT NULL,
+    document_id SERIAL PRIMARY KEY,
     per_document_name VARCHAR NOT NULL,
     per_document_description TEXT,
     per_document_active INT NOT NULL DEFAULT 1,
@@ -137,7 +122,7 @@ INSERT INTO ir_personal_documents (document_id, per_document_name, per_document_
 INSERT INTO ir_personal_documents (document_id, per_document_name, per_document_description) VALUES (2,'NIT', '.');
 
 CREATE TABLE ir_disabilities(
-    disability_id SERIAL PRIMARY KEY NOT NULL, 
+    disability_id SERIAL PRIMARY KEY, 
     dis_name VARCHAR,
     dis_description VARCHAR,
     dis_active INT NOT NULL DEFAULT 1,
@@ -152,7 +137,7 @@ INSERT INTO ir_disabilities (dis_name) VALUES ('Discapacidad intelectual');
 
 
 CREATE TABLE ir_users(
-    user_id SERIAL PRIMARY KEY NOT NULL,
+    user_id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     user_password VARCHAR(1000) NOT NULL,
     user_fcm_token VARCHAR NOT NULL, 
@@ -163,7 +148,7 @@ CREATE TABLE ir_users(
     user_document_detail VARCHAR,
     user_email VARCHAR(250) UNIQUE NOT NULL,
     user_cellphone VARCHAR(15) UNIQUE NOT NULL,
-    user_country_id INTEGER NOT NULL DEFAULT 0,
+    country_id INTEGER NOT NULL DEFAULT 0,
     state_id INTEGER NOT NULL DEFAULT 0,
     municipality_id INTEGER NOT NULL DEFAULT 0,
     user_photo_profile VARCHAR(250),
@@ -205,7 +190,7 @@ CREATE TABLE ir_users(
 
 
 CREATE TABLE ir_notification (
-    notification_id SERIAL PRIMARY KEY NOT NULL,
+    notification_id SERIAL PRIMARY KEY,
     not_title VARCHAR(150) NOT NULL,
     not_subtitle VARCHAR(250),
     not_description TEXT,
@@ -214,6 +199,20 @@ CREATE TABLE ir_notification (
     not_mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
+--CREATE TABLE RECOVER CODES 
+CREATE TABLE ir_recover_codes (
+    code_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    email VARCHAR NOT NULL,
+    code VARCHAR NOT NULL,
+    expiration_date VARCHAR,
+    active INT NOT NULL DEFAULT 1,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    mod_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT ir_users_id_fkey FOREIGN KEY (user_id)
+    REFERENCES ir_users (user_id)
+);
 
 
 

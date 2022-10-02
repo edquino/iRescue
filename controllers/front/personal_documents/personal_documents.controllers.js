@@ -6,7 +6,7 @@ const documents = {};
 documents.documentsList = async(req, res) => {
     try {
         
-        await db.query('SELECT document_id, per_document_name, per_document_description, per_document_active FROM ir_personal_documents', (err, results) => {
+        await db.query('SELECT document_id, per_document_name, per_document_description, per_document_active FROM ir_personal_documents ORDER BY document_id ASC', (err, results) => {
             if(err){
                 log('src/controllers/front', 'personal_documents', 'documentsList', err.message, false, req, res);
             }else{
@@ -31,6 +31,7 @@ documents.viewCreatedocuments = async(req, res) =>{
 documents.documentsCreate = async(req, res) =>{
     
     const { name, description } = req.body;
+
     try {
 
         await db.query('INSERT INTO ir_personal_documents (per_document_name, per_document_description) VALUES ($1, $2)', 

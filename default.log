@@ -2672,3 +2672,216 @@ error: error: no existe la columna «active»
     at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
 --------------------------------------------------------------------------------------------
 
+2022.09.13, 03:15:39.0161 UTC -> 
+archivo: personal_documents.controller
+ruta: src/controllers/front
+funcion: documentsCreate
+error: llave duplicada viola restricción de unicidad «ir_personal_documents_pkey»
+--------------------------------------------------------------------------------------------
+
+2022.09.13, 03:17:42.0136 UTC -> 
+archivo: states.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la columna «active»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.09.13, 03:18:16.0791 UTC -> 
+archivo: states.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la columna «active»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 17:53:54.0282 UTC -> 
+archivo: personal_documents.controller
+ruta: src/controllers/front
+funcion: documentsCreate
+error: llave duplicada viola restricción de unicidad «ir_personal_documents_pkey»
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:05:09.0709 UTC -> 
+archivo: countries.controller
+ruta: src/controllers/front
+funcion: create
+error: error: llave duplicada viola restricción de unicidad «ir_countries_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:15:03.0569 UTC -> 
+archivo: states.controller
+ruta: src/controllers/front
+funcion: stateList
+error: error: no existe la columna «active»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:21:14.0928 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateViewUpdate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:22:05.0001 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateViewUpdate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:24:29.0641 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateCreate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:24:59.0071 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateCreate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:28:25.0898 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateCreate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:35:19.0033 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateCreate
+error: error: INSERT tiene más columnas de destino que expresiones
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:36:25.0150 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateCreate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 18:51:33.0500 UTC -> 
+archivo: municipality.controller
+ruta: src/controllers/front
+funcion: viewcreate
+error: error: no existe la columna «active»
+--------------------------------------------------------------------------------------------
+
+2022.10.02, 19:09:28.0035 UTC -> 
+archivo: stateCreate.controller
+ruta: src/controllers/front
+funcion: stateCreate
+error: error: llave duplicada viola restricción de unicidad «ir_state_pkey»
+    at Parser.parseErrorMessage (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\EDDY AQUINO\Desktop\iRescue\iRescue\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    at readableAddChunk (_stream_readable.js:278:9)
+    at Socket.Readable.push (_stream_readable.js:217:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+--------------------------------------------------------------------------------------------
+

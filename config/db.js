@@ -4,7 +4,7 @@ const pool = new Pool({
     host:'localhost',
     user:'postgres',
     password: 'F1r3ba11$',
-    database: 'iRescue',
+    database: 'iRescueTest',
     port: '5432'
 });
 
